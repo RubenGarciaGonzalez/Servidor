@@ -98,6 +98,28 @@
         echo "----------------------------";
         echo "<br> Salida de substr($miCadena, -8, 4)=";
         echo substr($miCadena, -8, 4);
+        //Ejemplos de substr replace (cad1. cad2. inicio [, tamaño] );
+        $cadena1="Hola Mundo";
+        echo "<br>";
+        echo "str_raplce(Hola, Adios, $cadena1)= ";
+        echo str_replace("Hola", "Adios", $cadena1);
+        echo PHP_EOL;
+        //---------------------------------ejemplos htmlentities (cad1)
+        $cadena="¿el camion es rojo?no niño";
+        echo $cadena. "<br>".PHP_EOL;
+        echo "<br>".PHP_EOL;
+        echo htmlentities($cadena);
+        echo "<br>";
+        echo  "En html mostramos una imagen como <img src='url_img'>";
+        echo "<br>";
+        for ($i=0; $i <225 ; $i++) { 
+            echo "Caracter ascci $i==".chr($i)."<br>";
+        }
+
+        //count_chars()
+
+        $cadena="Hola Mundo";
+        var_dump(count_chars($cadena))
     ?>
     </div>
     </body>
