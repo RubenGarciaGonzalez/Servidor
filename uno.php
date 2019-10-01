@@ -81,9 +81,22 @@
         echo "strcmp(sevilla, Sevilla)=";
         echo strcmp("sevilla", "Sevilla");
 
-
-
-
+        echo "Ejemplos substr()<br>";
+        $miCadena="Hola Mundo Otra vez";
+        echo "Salida de substr($miCadena, 5, 4) donde \$miCadena=$miCadena: ";
+        echo substr($miCadena, 5, 4);
+        echo "<br><br>";
+        echo "----------------------------";
+        echo "<br> Salida de substr($miCadena, -6, 4)=";
+        echo substr($miCadena, -6, 4);
+        echo "<br><br>";
+        echo "----------------------------";
+        echo "<br> Salida de substr($miCadena, -8, -2)=";
+        echo substr($miCadena, -8, -2);
+        echo "<br><br>";
+        echo "----------------------------";
+        echo "<br> Salida de substr($miCadena, -8, 4)=";
+        echo substr($miCadena, -8, 4);
     ?>
     </div>
     </body>
