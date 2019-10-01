@@ -80,6 +80,7 @@
         echo "<br>";
         echo "strcmp(sevilla, Sevilla)=";
         echo strcmp("sevilla", "Sevilla");
+        //------------------------------------------
 
         echo "Ejemplos substr()<br>";
         $miCadena="Hola Mundo Otra vez";
