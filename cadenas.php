@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    </head>
-        
+
     </head>
     <body style='background-color:bisque'>
     <div class="container mt-5">
@@ -80,46 +80,10 @@
         echo "<br>";
         echo "strcmp(sevilla, Sevilla)=";
         echo strcmp("sevilla", "Sevilla");
-        //------------------------------------------
 
-        echo "Ejemplos substr()<br>";
-        $miCadena="Hola Mundo Otra vez";
-        echo "Salida de substr($miCadena, 5, 4) donde \$miCadena=$miCadena: ";
-        echo substr($miCadena, 5, 4);
-        echo "<br><br>";
-        echo "----------------------------";
-        echo "<br> Salida de substr($miCadena, -6, 4)=";
-        echo substr($miCadena, -6, 4);
-        echo "<br><br>";
-        echo "----------------------------";
-        echo "<br> Salida de substr($miCadena, -8, -2)=";
-        echo substr($miCadena, -8, -2);
-        echo "<br><br>";
-        echo "----------------------------";
-        echo "<br> Salida de substr($miCadena, -8, 4)=";
-        echo substr($miCadena, -8, 4);
-        //Ejemplos de substr replace (cad1. cad2. inicio [, tamaño] );
-        $cadena1="Hola Mundo";
-        echo "<br>";
-        echo "str_raplce(Hola, Adios, $cadena1)= ";
-        echo str_replace("Hola", "Adios", $cadena1);
-        echo PHP_EOL;
-        //---------------------------------ejemplos htmlentities (cad1)
-        $cadena="¿el camion es rojo?no niño";
-        echo $cadena. "<br>".PHP_EOL;
-        echo "<br>".PHP_EOL;
-        echo htmlentities($cadena);
-        echo "<br>";
-        echo  "En html mostramos una imagen como <img src='url_img'>";
-        echo "<br>";
-        for ($i=0; $i <225 ; $i++) { 
-            echo "Caracter ascci $i==".chr($i)."<br>";
-        }
 
-        //count_chars()
 
-        $cadena="Hola Mundo";
-        var_dump(count_chars($cadena))
+
     ?>
     </div>
     </body>
