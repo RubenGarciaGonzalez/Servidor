@@ -50,10 +50,6 @@
     <hr>
     <div class="container, mt-4">
         <h3 class="text-center">Ejercicio 3</h3>
-        <form class="text-center" name="formulario"method="get"action="">
-            Correo1: <input type="text"name="correo1"value="">
-            <input type="submit"/>
-        </form>
         <?php
 
         ?>
@@ -72,6 +68,11 @@
         */
         $frase=$_GET['frase'];
         echo $frase;
+        $nuevaFrase=explode(' ',$frase);
+        echo "<br>";
+        for ($i=0; $i < 2 ; $i++) { 
+            echo "'$nuevaFrase[$i]'| ";
+        }
         ?>
     </div>
 </body>
