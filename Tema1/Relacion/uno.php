@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    </head>
     <title>Relación de cadenas en PHP nº1</title>
 </head>
-<body>
-<body style="background-color:#5d99c6">
+<body style="background-color:#5d99c6"> 
     <div class="container, mt-4">
         <h3 class="text-center">Ejercicio 1</h3>
         <?php
@@ -41,53 +40,5 @@
             }
         ?>
     </div>
-    <hr>
-     
-    <div class="container, mt-4">
-        <h3 class="text-center">Ejercicio 2</h3>
-        
-    </div>
-    <hr>
-    <div class="container, mt-4">
-        <h3 class="text-center">Ejercicio 3</h3>
-        <?php
-
-        ?>
-    </div>
-    <hr>
-    <div class="container, mt-4">
-        <h3 class="text-center">Ejercicio 4</h3>
-        <form class="text-center" name="formulario"method="get"action="">
-            frase: <input type="text"name="frase"value="">
-            <input type="submit"/>
-        </form>
-        <?php
-        /*
-        Realiza una página PHP en la que se introduzca una frase en una variable. Muestra por pantalla
-        las dos primeras palabras de esa frase.
-        */
-        $frase=$_GET['frase'];
-        echo $frase;
-        $nuevaFrase=explode(' ',$frase);
-        echo "<br>";
-        for ($i=0; $i < 2 ; $i++) { 
-            echo "'$nuevaFrase[$i]'| ";
-        }
-        ?>
-    </div>
-    <hr>
-    <div class="container, mt-4">
-        <h3 class="text-center">Ejercicio 4</h3>
-        <form class="text-center" name="formulario"method="get"action="">
-            frase1: <input type="text"name="frase1"value="">
-            <input type="submit"/>
-        </form>
-        <?php
-            $frase1=$_GET['frase1'];
-            $letras=substr_count($frase1, "a");
-            echo "<br>";
-            echo $letras;
-        ?>
-    </div>
-</body>
+    </body>
 </html>
