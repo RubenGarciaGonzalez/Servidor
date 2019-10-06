@@ -169,6 +169,94 @@
                 echo "<br>";
             }while(next($misCapitales));
 
+            //--------------------------------------------
+            //FUNCION PARA RECORRER ARRAY( EL + COMÚN)
+            $array1=[
+                "Clave 1"=>"Valor de la clave 1",
+                "Clave 2"=>"Valor de la clave 2",
+                "Clave 3"=>"Valor de la clave 3",
+                "Clave 4"=>"Valor de la clave 4",
+                "Clave 5"=>"Valor de la clave 5", 
+            ];
+
+            echo "<br>---------------------<br>";
+            foreach ($array1 as $k => $v) {
+                echo "\$array1[$k]=".$v."<br>";
+            }           
+            //--------------------------------------------
+            echo "<br>---------------------<br>";
+            $comunidades=[
+                "Andalucia"=>["Almería","Cadiz","Cordoba","Granada","Huelva"."Jaen","Malaga","Sevilla"],
+                "Extremadura"=>["Badajoz","Caceres"],
+                "Aragon"=>["Zaragoza","Huesca","Teruel"],
+                "Murcia"=>"Murcia"
+            ];
+
+            foreach ($comunidades as $k => $v) {
+                echo "Comunidad: <b>".$k."</b> Sus provincias son:<br>";
+                foreach ($v as $k1 => $v1) {
+                    echo "$k1.- $v1<br>";
+                }
+                echo "<br>";
+            }
+             
+            foreach($comunidades as $key => $valor){
+                $num = count($valor);
+                echo "<table border=1px>";
+                echo "<tr align=center>";
+                echo "<td colspan=$num>$key</td>";
+                echo "</tr>";
+                echo "<tr>";
+                foreach($valor as $key2 => $valor2){
+                    echo "<td> $valor2 </td>";
+                }
+                echo "</tr>";
+                echo "</table><br><br>";
+            }
+
+            //---------------------------List
+            $vector=["valor1","valor2"];
+            list($var1,$var2)=$vector;
+            echo $var1."<br>";
+            echo $var2."<br>";
+            //El list se suele utilizar por each()
+            $vector1=[
+                "Soy el primero valor",
+                "Soy una clave"=>"Soy el valor de la clave"
+            ];
+            list($a,$b)=each($vector1);
+            //--------------------------------------
+            echo "<br>";
+            var_dump($a);
+            echo "<br>";
+            var_dump($b);
+            ///----------------------------------
+            echo "<br>------------";
+            list($a,$b)=$vector1;
+            var_dump($a);
+            echo "<br>";
+            var_dump($b);
+            //--------------------------------------
+            echo "<br>";
+            list($a,$b)=each($vector1);
+            var_dump($a);
+            echo "<br>";
+            var_dump($b);
+
+            $vector=["valor1","valor2","valor3"];
+            list($uno,$dos,$tres)=$vector;
+            echo "<br>";
+            echo "$uno,$dos,$tres";
+            $prubea=[
+                "kuno"=>"vuno",
+                "kdos"=>"vdos"
+            ];
+
+            list($a,$b)=each($prubea);
+            echo "<br>$a, $b";
+            list($a,$b)=each($prubea);
+            echo "<br>$a, $b";
+
         ?>
     </div>
 </body>
