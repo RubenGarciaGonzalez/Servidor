@@ -11,6 +11,24 @@
     <div class="container, mt-4">
         <h3 class="text-center">Ejercicio 3</h3>
         <?php
+           $correo="ruben00@gmail.com";
+           echo "El correo dado es <b>$correo</b><br>";
+           function comprobacion($correo){
+            if (strlen($correo)<3 || strlen($correo)>20){
+               echo $correo . " no es válido<br>";
+               return false;
+            }
+            $caracteresPermitidos = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ0123456789-_";
+            for ($i=0; $i<strlen($correo); $i++){
+               if (strpos($correo, $caracteresPermitidos)){
+                  echo $correo . " no es válido<br>";
+                  return false;
+               }
+            }
+            echo $correo . " es válido<br>";
+            return true;
+         } 
+         comprobacion($correo);
            
         ?>
     </div>
