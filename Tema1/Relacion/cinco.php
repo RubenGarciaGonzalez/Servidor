@@ -15,10 +15,16 @@
             <input type="submit"/>
         </form>
         <?php
-            $frase1=$_GET['frase1'];
-            $letras=substr_count($frase1, "a");
-            echo "<br>";
-            echo $letras;
+            
+            if (!isset($_GET['frase1']))) {
+                echo "<h3 class='text-danger'>No pasaste la frase</h3>";  
+            } else {
+                $frase1=$_GET['frase1'];
+                $letras=substr_count($frase1, "a");
+                echo "<br>";
+                echo "En la frase $frase1 hay un total de $letras letras";
+            }
+           
         ?>
     </div>
     </body>
