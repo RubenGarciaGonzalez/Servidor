@@ -11,7 +11,15 @@
     <div class="container, mt-4">
         <h3 class="text-center">Ejercicio 2</h3>
         <?php
-           
+           $correo="rubengg_00@hotmail.com";
+           echo "El correo dado es $correo<br>";
+           if (substr_count($correo,"@") == 1 && substr_count($correo,".")== 1) {
+               echo "El correo es válido<br>";
+               echo "El nombre del correo es <b>".strchr($correo,"@",true)."</b><br>";
+               echo "El nombre del dominio es <b>".strchr($correo,"@")."</b><br>";  
+           }else{
+               echo "El correo NO es válido";
+           }
         ?>
     </div>
     </body>
