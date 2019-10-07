@@ -11,8 +11,24 @@
     <div class="container, mt-4">
         <h3 class="text-center">Ejercicio 2</h3>
         <?php
-           
+           /*
+           Imprime los valores del array asociativo siguiente usando la estructura de control foreach:
+            $v[1]=90;
+            $v[30]=7;
+            $v['e']=99;
+            $v['hola']=43;
+           */
           
+           $array=[
+               1=>90,
+               30=>7,
+               "e"=>99,
+               "hola"=>43
+           ];
+
+           foreach ($array as $k => $v) {
+            echo "\$array[$k]=".$v."<br>";
+           }   
         ?>
     </div>
     </body>
