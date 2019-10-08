@@ -9,7 +9,7 @@
 </head>
 <body style="background-color:#5d99c6"> 
     <div class="container, mt-4">
-        <h3 class="text-center">Ejercicio 7</h3>
+        <h3 class="text-center">Ejercicio 8</h3>
         <?php
         /*
         Crea un array con los nombres Pedro, Ismael, Sonia, Clara, Susana, Alfonso y Teresa. Muestra el
