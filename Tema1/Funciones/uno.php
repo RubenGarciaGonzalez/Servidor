@@ -42,6 +42,57 @@
             echo "<p class='text-center'>Hola $var1 y hola $var2</p>";
         }
 
+        //func_get_arg , func_get_args, func_num_args
+        function suma(){
+            if (func_num_args()==0) {
+                return "<br>Error, nada que sumar!!!!<br>";
+            }
+            $acum=0;
+            for ($i=0; $i < func_num_args() ; $i++) { 
+                $acum=func_get_arg($i);
+            }
+
+            return $acum;
+        }
+
+        function suma1(){
+            if (func_num_args()==0) {
+                return "<br>Error, nada que sumar!!!!<br>";
+            }
+            $acum=0;
+           foreach (func_get_args() as $k => $v) {
+               $acum+=$v;
+           }
+
+            return $acum;
+        }
+
+        function info(){
+            echo "Has pasado ". func_num_args(). " Parámetros<br>";
+            echo "Los parametros son :<br>";
+            echo "<ol>";
+            for ($i=0; $i <func_num_args() ; $i++) { 
+                echo "<li>".func_get_arg($i);
+            }
+            echo "</ol>";
+            echo print_r(func_get_args());
+        }
+
+        //---------------------------------------------
+        function prueba(){
+            global $var;
+            echo $var;
+        }
+
+        function prueba1(){
+            echo $GLOBALS['var'];
+        }
+
+        function incremento(){
+            static $a=1;
+            return $a++;
+        }
+
 
     ?>
 </head>
@@ -70,7 +121,38 @@
             //-------------------------
             saludo1("Pepe","Ana");
             saludo1("Pepe");
-            saludo1();
+            saludo();
+            //saludo1();
+            //------------------------------Funciones con un numero variable de parametros
+            suma();
+            echo "La suma es: ".suma(5)."<br>";//5
+            echo "La suma es: ".suma(2,4)."<br>";//6
+            echo "La suma es: ".suma(2,4,5)."<br>";//11
+            echo "La suma es: ".suma(2,4,4,8)."<br>";//18
+            echo "<br>";
+            //-------------------------------------
+            suma1();
+            echo "La suma es: ".suma1(5)."<br>";//5
+            echo "La suma es: ".suma1(2,4)."<br>";//6
+            echo "La suma es: ".suma1(2,4,5)."<br>";//11
+            echo "La suma es: ".suma1(2,4,4,8)."<br>";//18
+            echo "<br>";
+            //---------------------------------------------
+            info();
+            info("Hola","Adios",3,4,5);
+            //------------
+            //Ambito de variables
+            //Locales, locales estaticas, globales
+            echo "<br>-------------------------------------<br>";
+            $var=123;
+            prueba();
+            echo "<br>-------------------------------------<br>";
+            prueba1();
+            echo "<br>---------------------------<br>";
+            echo incremento(). "<br>";
+            echo incremento(). "<br>";
+            echo incremento(). "<br>";
+
 
         ?>
     </div>
