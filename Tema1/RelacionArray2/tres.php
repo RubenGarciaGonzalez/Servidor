@@ -17,9 +17,26 @@
             recorriendo el array:
             */
 
-            
-
+            $colores=array(
+                array("#FF0000","#00FF00","#0000FF"),
+                array("#FE9ABC","#FDF189","#BC8F8F")    
+            );
         ?>
+        <br>
+        <table border='1px' align='center' cellpadding="10">
+            <tbody>
+                <?php
+                    foreach ($colores as $array){
+                         echo "<tr>";
+                         foreach($array as $array)
+                        {
+                             echo "<td style='background-color:$array'>".$array."</td>";
+                        }
+                     echo "</tr>";
+                    }
+                ?>
+            </tbody>
+        </table> 
     </div>
     </body>
 </html>

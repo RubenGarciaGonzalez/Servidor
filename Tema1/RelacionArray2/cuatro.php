@@ -9,15 +9,34 @@
 </head>
 <body style="background-color:#5d99c6"> 
     <div class="container, mt-4">
-        <h3 class="text-center">Ejercicio 4</h3>
+        <h3 class="text-center">Ejercicio 3</h3>
         <?php
             /*
-            Dado el array anterior comprueba si en él se encuentra el color “FF88CC” y el color “FF0000” usando la función in_array.
+            Crea un array de dos dimensiones, de manera que en una dimensión contenga el tipo de colores
+            (fuerte o suave) y en la otra 3 colores de cada tipo. Muestra una tabla como la siguiente
+            recorriendo el array:
             */
-            
-            
 
+            $colores=array(
+                array("#FF0000","#00FF00","#0000FF"),
+                array("#FE9ABC","#FDF189","#BC8F8F")    
+            );
         ?>
+        <br>
+        <table border='1px' align='center' cellpadding="10">
+            <tbody>
+                <?php
+                    foreach ($colores as $array){
+                         echo "<tr>";
+                         foreach($array as $array)
+                        {
+                             echo "<td style='background-color:$array'>".$array."</td>";
+                        }
+                     echo "</tr>";
+                    }
+                ?>
+            </tbody>
+        </table> 
     </div>
     </body>
 </html>
