@@ -15,10 +15,19 @@
             Obtén  el  número  de  valores  iguales  al  valor  2  contenidos  en  un  array
             de  10 valores generados aleatoriamente con valores de 1 a 10.
             */
-            
-            
+            $array=array(10);
+            $contador=0;
+            for ($i=0; $i < 10 ; $i++) { 
+                $array[$i]=rand(1,10);
+                if ($array[$i]==2) {
+                    $contador++;
+                }
+            }
 
-            
+            echo "<b>El array generado es : </b><br>";
+            print_r($array);
+            echo "<br><b>El número 2 se ha repetido ".$contador." veces </b><br>";
+
 
         ?>
     </div>
