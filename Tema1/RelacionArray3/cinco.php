@@ -24,8 +24,37 @@
             conprint_r.
             */
             
+            $paises = array (
+                'alemania',
+                'brasil',
+                'italia',
+                'chile',
+                'uruguay',
+                'australia'
+            );
+            echo "<b>El array es: </b><br>";
+            print_r($paises);
+            echo "<br>";
+            //1)
+            echo "<b>1) Eliminar los elementos alemania, italia y australia</b><br>";
+            unset($paises[0],$paises[2],$paises[5]);
+            print_r($paises);
+            echo "<br>";
+            //2)
+            echo "<b>2) Insertar los elementos ‘argentina’ y ‘bolivia’</b><br>";
+            array_push($paises,'argentina','bolivia');
+            print_r($paises);
+            echo "<br>";
+            //3)
+            echo "<b>3) Ordenar por orden alfabético el array</b><br>";
+            sort($paises);
+            //4)
+            echo "<b>4) Mostrar el resultado por pantalla con print_r. Este es muy fácil si tenemos presentes las funciones de la clase teórica.
+            Primero se hace la definición que está ya hecha en el enunciado. Luego se eliminan con la funciónunsetaquellos elementos
+            que se piden. A continuación, se agregan los dos que se piden, se ordenan con sort y finalmente se muestra por pantalla 
+            con print_r.</b><br>";
+            print_r($paises);
             
-           
             
         ?>
     </div>

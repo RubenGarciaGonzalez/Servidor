@@ -15,22 +15,20 @@
              Definir tres arrays: uno puramente asociativo, otro puramente enumerativo y otro mixto.Luego,
              guardar en una variable la suma de los elementos de los tres arrays y mostrarla por pantalla
             */
-
-            $array1=[
-                "1" => "a",
+            $arrays=array(
+                array("1" => "a",
                 "1" => "b",
                 "1.5" => "c",
-                "2" => "d",
-            ];
-
-            $array2=[4,8,6,9,1];
-
-            $array3=[
-                15,
+                "2" => "d"),
+                array(4,8,6,9,1),
+                array(15,
                 "13"=>"z",
                 2,
-                "27"=>"dx"
-            ];
+                "27"=>"dx")
+            );
+            
+            echo "La suma de los elementos de los tres arrays es <b>". count($arrays, COUNT_RECURSIVE)."</b>"; 
+            
 
         ?>
     </div>
