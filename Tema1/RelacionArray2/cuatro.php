@@ -12,15 +12,26 @@
         <h3 class="text-center">Ejercicio 3</h3>
         <?php
             /*
-            Crea un array de dos dimensiones, de manera que en una dimensión contenga el tipo de colores
-            (fuerte o suave) y en la otra 3 colores de cada tipo. Muestra una tabla como la siguiente
-            recorriendo el array:
+            Dado el array anterior comprueba si en él se encuentra el color “FF88CC” y el color “FF0000” usando la función in_array.
             */
 
             $colores=array(
                 array("#FF0000","#00FF00","#0000FF"),
                 array("#FE9ABC","#FDF189","#BC8F8F")    
             );
+
+            if (in_array(array('#FF88CC'),$colores)==true) {
+                echo "El color #FF88CC existe<br>";
+             }else{
+                 echo "El color #FF88CC no existe<br>";
+            }
+
+            if (in_array(array("#FF0000"),$colores)==true) {
+                echo "El color #FF0000 existe<br>";
+             }else{
+                 echo "El color #FF0000 no existe<br>";
+            }
+
         ?>
         <br>
         <table border='1px' align='center' cellpadding="10">
@@ -37,6 +48,10 @@
                 ?>
             </tbody>
         </table> 
+        <?php 
+           
+
+        ?>
     </div>
     </body>
 </html>
