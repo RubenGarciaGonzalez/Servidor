@@ -35,8 +35,10 @@
             );
 
             echo "<ul>";
-                foreach ($familias as $k=>$v) {
-                    echo "<li>".$v."</li>";
+                foreach ($familias as $familia) {
+                    foreach ($familia as $k => $v) {
+                        echo "<li>".$k."=>".$v."</li>";
+                    }
                 }
             echo "</ul>";
 
