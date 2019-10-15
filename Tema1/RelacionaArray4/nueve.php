@@ -9,26 +9,19 @@
 </head>
 <body style="background-color:#5d99c6"> 
     <div class="container, mt-4">
-        <h3 class="text-center">Ejercicio 2</h3>
+        <h3 class="text-center">Ejercicio 9</h3>
         <?php
            /*
-           Imprime los valores del array asociativo siguiente usando la estructura de control foreach:
-            $v[1]=90;
-            $v[30]=7;
-            $v['e']=99;
-            $v['hola']=43;
+            Crea   un   array   llamado   “lenguajes_cliente”   y   otro   “lenguajes_servidor”,   crea   tu   mismo   losvalores,
+            poniendo índices alfanuméricos  a cada valor. Junta ambos arrays en uno solo llamado“lenguajes” y muéstralo por pantalla
+            en una tabla.
            */
-          
-           $array=[
-               1=>90,
-               30=>7,
-               "e"=>99,
-               "hola"=>43
-           ];
 
-           foreach ($array as $k => $v) {
-            echo "\$array[$k]=".$v."<br>";
-           }   
+           $lenguaje_cliente=["1L","2F","4M","9P"];
+           $lenguaje_servidor=["7A","5B","10G","8J"];
+           $fusion=array_merge($lenguaje_cliente,$lenguaje_servidor);
+           print_r($fusion);
+            
         ?>
     </div>
     </body>

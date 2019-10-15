@@ -9,26 +9,23 @@
 </head>
 <body style="background-color:#5d99c6"> 
     <div class="container, mt-4">
-        <h3 class="text-center">Ejercicio 2</h3>
+        <h3 class="text-center">Ejercicio 15</h3>
         <?php
            /*
-           Imprime los valores del array asociativo siguiente usando la estructura de control foreach:
-            $v[1]=90;
-            $v[30]=7;
-            $v['e']=99;
-            $v['hola']=43;
+            Implementa   un   array   asociativo   con   los   siguientes   valores   y   ordénalo   de   menor   a   mayor.
+            Muestra los valores en una tabla.$numeros = array(3, 2, 8, 123, 5, 1);
            */
-          
-           $array=[
-               1=>90,
-               30=>7,
-               "e"=>99,
-               "hola"=>43
-           ];
 
-           foreach ($array as $k => $v) {
-            echo "\$array[$k]=".$v."<br>";
-           }   
+         $numeros = array(3, 2, 8, 123, 5, 1);
+         sort($numeros);
+
+         echo "<table border='2' align='center'>";
+            echo "<tr>";
+            foreach ($numeros as $key => $value) {
+                echo "<td>$value</td>";
+            } 
+            echo "</tr>";
+        echo "</table>";
         ?>
     </div>
     </body>

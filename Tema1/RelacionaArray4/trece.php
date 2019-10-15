@@ -9,26 +9,27 @@
 </head>
 <body style="background-color:#5d99c6"> 
     <div class="container, mt-4">
-        <h3 class="text-center">Ejercicio 2</h3>
+        <h3 class="text-center">Ejercicio 13</h3>
         <?php
            /*
-           Imprime los valores del array asociativo siguiente usando la estructura de control foreach:
-            $v[1]=90;
-            $v[30]=7;
-            $v['e']=99;
-            $v['hola']=43;
+            Muestra el array del ejercicio anterior pero en orden inverso
            */
-          
-           $array=[
-               1=>90,
-               30=>7,
-               "e"=>99,
-               "hola"=>43
-           ];
 
-           foreach ($array as $k => $v) {
-            echo "\$array[$k]=".$v."<br>";
-           }   
+            $array1=[
+                "Lagartija","Araña","Perro","Gato","Raton"
+            ];
+
+            $array2=[
+                "12","34","45","52","12"
+            ];
+
+            $array3=[
+                "Sauce","Pino","Naranjo","Chopo","Perro","34"
+            ];
+            array_push($array1,$array2,$array3);
+            $reverso=array_reverse($array1);
+            print_r($reverso);
+            
         ?>
     </div>
     </body>
