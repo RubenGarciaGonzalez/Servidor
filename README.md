@@ -1,2 +1,2 @@
 # Servidor
-# Aqui subiré todo el contenido relacionado con el Desarrollo de Aplicaciones Web en Entorno Servidor
+# Todo el contenido relacionado con el Desarrollo de Aplicaciones Web en Entorno Servidor
