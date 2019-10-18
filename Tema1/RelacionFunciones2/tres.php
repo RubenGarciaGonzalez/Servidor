@@ -10,7 +10,7 @@
 
     function mesDia($mes,$dia){
 
-        if ($mes<1 && $mes>12 || $dia<1 && $dia>7) {
+        if ($mes<1 && $mes>12 && $dia<1 && $dia>7) {
             echo "<h2 class='text-center text-danger'>ERROR!!! LOS NÚMEROS NO CONCUERDAN CON LOS PARÁMETROS ESTABLECIDOS</h2>";
         }else{
             $meses=[
