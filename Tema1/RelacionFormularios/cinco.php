@@ -23,52 +23,57 @@
 
             echo "<p align='center'>";
             
-            echo "Su nombre es:<b> ".$_POST['nombre']."</b><br>";
-            echo "Sus apellidos son:<b> ".$_POST['apellidos']."</b><br>";
+            echo "<p align='center'>Su nombre es:<b> ".$_POST['nombre']."</b><br>";
+            echo "<p align='center'>Sus apellidos son:<b> ".$_POST['apellidos']."</b><br>";
 
             if ($_POST['edad']=="0") {
-                echo "<p class='text-danger'>ERROR! Debe seleccionar una opción.</p><br>";        
+                echo "<p align='center' class='text-danger'>ERROR! Debe seleccionar una opción.</p><br>";        
             }elseif ($_POST['edad']=="1") {
-                echo "Usted tiene <b>menos de 20 años</b><br>";                
+                echo "<p align='center'>Usted tiene <b>menos de 20 años</b><br>";                
             }elseif ($_POST['edad']=="2"){
-                echo "Usted tiene entre <b>20 y 40 años</b><br>";                
+                echo "<p align='center'>Usted tiene entre <b>20 y 40 años</b><br>";                
             }elseif ($_POST['edad']=="3"){
-                echo "Usted tiene entre <b>40 y 69 años</b><br>";                
+                echo "<p align='center'>Usted tiene entre <b>40 y 69 años</b><br>";                
             }else{
-                echo "Usted tiene <b>más de 60 años</b><br>";                
+                echo "<p align='center'>Usted tiene <b>más de 60 años</b><br>";                
             }
 
-            echo "Su peso es de <b>".$_POST['peso']." kg</b><br>";
+            echo "<p align='center'>Su peso es de <b>".$_POST['peso']." kg</b></p>";
 
-            if ($_POST['sexo']=="hombre") {
-                echo "Usted es <b>hombre</b><br>";
-            }elseif ($_POST['sexo']=="mujer") {
-                echo "Usted es <b>mujer</b><br>";
+            $sexo = '';
+            if (!empty($_POST['sexo'])) {
+                $sexo = $_POST['sexo'];
+            }
+            if ($sexo=="hombre") {
+                echo "<p align='center'>Usted es <b>hombre</b></p>";
+            }elseif ($sexo=="mujer") {
+                echo "<p align='center'>Usted es <b>mujer</b></p>";
             }else{
-                echo "<p class='text-danger'>ERROR! Debe seleccionar una opción.</p><br>";        
+                echo "<p align='center' class='text-danger'>ERROR! Debe seleccionar una opción.</p>";        
             }
 
-            if ($_POST['estado']="soltero") {
-                echo "Su estado civil actual es <b>soltero/a</b><br>";
-            }elseif ($_POST['estado']="casado") {
-                echo "Su estado civil actual es <b>casado/a</b><br>";
-            }elseif ($_POST['estado']="otro") {
-                echo "Su estado <b>civil actual es diferente</b> a los disponibles en el formulario<br>";
+            if ($_POST['estado']=="soltero") {
+                echo "<p align='center'>Su estado civil actual es <b>soltero/a</b></p>";
+            }elseif ($_POST['estado']=="casado") {
+                echo "<p align='center'>Su estado civil actual es <b>casado/a</b></p>";
+            }elseif ($_POST['estado']=="otro") {
+                echo "<p align='center'>Su estado <b>civil actual es diferente</b> a los disponibles en el formulario</p>";
             }else{
-                echo "<p class='text-danger'>ERROR! Debe seleccionar una opción.</p><br>"; 
+                echo "<p align='center' class='text-danger'>ERROR! Debe seleccionar una opción.</p>"; 
             }
 
             if (is_array($_POST['aficiones'])) {
-                echo "Usted ha seleccionado <b>".count($_POST['aficiones'])." aficiones </b><br>";
+                echo "<p align='center'>Usted ha seleccionado <b>".count($_POST['aficiones'])." aficiones </b></p>";
                 foreach ($_POST['aficiones'] as $k => $v) {
-                    echo "Aficion :<b>".$v."</b><br>";
+                    echo "<p align='center'>Aficion :<b>".$v."</b></p>";
               }
             }
 
-            echo "</p>";
-
+        
             echo "<p class='text-center mt-5'>";
                 echo "<a href='cinco.php' class='btn btn-primary'>Volver</a>";
+            echo "</p>";
+
             echo "</p>";
 
         }else{
