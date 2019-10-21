@@ -57,16 +57,18 @@
         ?>
 
         <form method='post' name='formulario' action='dos.php'>
-        <div class="form-group">
+        <div class="form-group" align="center">
             <label for="edad">Introduce tu edad:</label>
-            <input type="text" name="edad" placeholder="Edad">
+            <input type="number" name="edad" min="5" max="130" placeholder="Edad">
         </div>
-        <div class="form-group">
+        <div class="form-group" align="center">
             <label for="peso">Introduce tu peso:</label>
-            <input type="text" name="peso" placeholder="Peso">
+            <input type="number" step="any" name="peso" min="10" max="150" placeholder="Peso">
         </div>
+        <div class="form-group" align="center">
         <button type="submit" class="btn btn-primary" name="btnEnv">Enviar</button>
         <button type="reset" class="btn btn-primary" name="btnBor">Borrar</button>
+        </div>
         </form>
     </div>
     <?php
