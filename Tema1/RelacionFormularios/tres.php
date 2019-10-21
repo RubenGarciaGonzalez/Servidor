@@ -23,9 +23,28 @@
                 •Si no se indica ninguna afición, el programa debe indicarlo.
          */
 
-        
-            
-    
+         if (isset($_POST['btnEnv'])) {
+            if (isset($_POST['sexo'])) {
+                if ($_POST['sexo']=="") {
+                    echo "<p class='text-danger'>ERROR! Debe seleccionar una opción.</p><br>";        
+                }elseif ($_POST['sexo']=="hombre") {
+                    echo "Usted es un hombre<br>";
+                }elseif ($_POST['sexo']=="mujer") {
+                    echo "Usted es una mujer<br>";
+                }
+            }
+
+            if (isset($_POST['aficiones'])) {
+                echo "Has seleccionado : " . count($_POST['aficiones']) . " aficiones<br>";
+                    foreach ($_POST['aficiones'] as $k => $v) {
+                        echo "Afición: " . $v . "<br>";
+                    }
+                } else {
+                    echo "<p align='center'><b>No tienes ninguna afición, pedazo de soso<b></p>";
+                }
+         }else{
+
+         
         ?>
 
         <form method='post' name='formulario' action='tres.php'>
@@ -36,13 +55,16 @@
             <label><input type="radio" name="sexo" value="mujer">Mujer</label>
             <br>
             <b>Aficiones:</b>
-            <label><input type="checkbox" name="cine">Cine</label>
-            <label><input type="checkbox" name="literatura">Literatura</label>
-            <label><input type="checkbox" name="musica">Música</label>
+            <label><input type="checkbox" name="aficiones[]" value="Cine">Cine</label>
+            <label><input type="checkbox" name="aficiones[]" value="Literatura">Literatura</label>
+            <label><input type="checkbox" name="aficiones[]" value="Música">Música</label>
             <br>
-            <input type="submit" value="Enviar">
-            <input type="reset" value="Borrar">
+            <input type="submit" value='Enviar' name='btnEnv' class='btn btn-primary'>
+            <input type="reset" value='Borrar' name='btnRes' class='btn btn-primary'>
         </form>
     </div>
+    <?php
+        }
+    ?>
     </body>
 </html>
