@@ -21,7 +21,6 @@
 
     ?>
 
-
     <body style="background-color:bisque">
 
     <?php
@@ -38,14 +37,9 @@
                 echo "<img src='".$f."' class='rounded-circle'>";
             echo "<td>";
             echo "</tr>";
-            
-            
         }
 
-
     ?>
-
-
 
     <?php
 
@@ -85,7 +79,6 @@
         }else{
 
     ?>
-
 
         <div class="container mt-5">
             <h3 class='text-center bg-primary'>Subir Archivos</h3>
