@@ -24,7 +24,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
-<body>
+<body style="background-color:aqua">
     <h3 class="text-center">Mi sitio</h3>
     <fieldset style='background-color: silver; width: 690px;'>
         <form name='re' method='POST' action='librovisitas.php' style='display:inline;'>
