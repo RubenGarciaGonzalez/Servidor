@@ -19,62 +19,50 @@
             guardaremos con un nombre único en la carpeta imagen, esta imagen la mostraremos en la página
             donde procesemos el formulario.
          */
+            if (isset($_POST['btnEnviar'])) {
 
-
-        function lanzarError($mensaje){
-            echo "<div class='container text-center mt-5'>";
-            echo "<p class='text-danger text-center text-weight-bold'>$mensaje</p>";
-            echo "<a href='siete.php' class='btn btn-warning mt-5'>Volver</a>";
-            echo "</div>";
-            die();
-        }
-
-        function verFicha($u,$m,$f){
-            echo "<div class='container mt-5 border border-dark text-center'>";
-            echo "<table border='0' cellpadding='3' cellspacing='3'>";
-            echo "<tr align=center>";
-            echo "<td colspan='2' align='center'><b>FICHA</b></td>";
-            echo "</tr>";
-            echo "<tr>";
-            echo "<td>";
-                echo "<img src='".$f."' class='rounded-circle'>";
-            echo "<td>";
-            echo "</tr>";    
-        }
-
-        if (isset($_POST['btnEnviar'])) {   
-            //Procesamos el formulario
-            // print_r($_FILES['foto']);
-            // echo "<br>";
-            if ($_FILES['pdf']['error']==2) {
-                miError("El archivo excede el tamaño permitido!!!");
-            }
-            //Paso 1: compruebo quee efectivamente se ha subido el archivo (en principio en temp)
-            if (is_uploaded_file($_FILES['pdf']['tmp_name'])) {
-                $array=[
-                    'application/pdf'   
-                ];
-                
-                if (!in_array($_FILE['pdf']['type'], $array)) {
-                    lanzarError("No es un archivo PDF !!!!");
+                if ($_FILES['pdf']['error']==2) {
+                    echo "<h3 class='text-center text-danger'>ERROR! El tamaño excede del permitido</h3>";
+                    die();
                 }
-                //El archivo se subio correctamente
-                $pdf=$_POST['pdf'];
-                $foto=$_POST['foto'];
-                $nombreP=$_FILES['pdf'];
-                $nombreF=$_FILES['foto'];
-                $id=time(); //marca de tiempo es un entero secuencial y único
-                $nombrePDF='./documentos/'.$id.$nombreP; // le meto el id delante como nombre de archivo.
-                $nombreFoto='./imagen/'.$id.$nombreF; // le meto el id delante como nombre de archivo.
-                move_uploaded_file($_FILES['pdf']['tmp_name'], $nombrePDF);
-                move_uploaded_file($_FILES['foto']['tmp_name'], $nombreFoto);
-                verFicha($n,$e,$nombreFoto);
-            }
-            else{
-                lanzarError("No se subió el archivo");
-            }
-        }else{
 
+                if(is_uploaded_file($_FILES['pdf']['tmp_name'])){
+                    $array=[
+                        "application/pdf"
+                    ];
+                    if (!in_array($_FILES['pdf']['type'],$array)) {
+                        echo "<h3 class='text-center text-danger'>ERROR! El archivo no corresponde con el tipo permitido</h3>";
+                        die();                     
+                    }
+
+                    $documentos="documentos/";
+                    opendir($documentos);
+                    $destinoPdf=$documentos.$_FILES['pdf']['name'];
+                    copy($_FILES['pdf']['tmp_name'],$destinoPdf);
+                    echo "Archivos subidos exitosamente<br>";
+                    $nombrePdf=$_FILES['pdf']['name'];
+                    echo "El nombre del archivo subido es $nombrePdf";
+                }
+
+                
+                $fotos="imagen/";
+                opendir($fotos);
+                $destinoFoto=$fotos.$_FILES['foto']['name'];
+                copy($_FILES['foto']['tmp_name'],$destinoFoto );
+                echo "Archivos subidos exitosamente<br>";
+                $nombreFoto=$_FILES['foto']['name'];
+                echo "<div class='container mt-5 border border-dark text-center'>";
+                echo "<table border='0' cellpadding='3' cellspacing='3'>";
+                echo "<tr align=center>";
+                echo "<td colspan='2' align='center'><b>FICHA</b></td>";
+                echo "</tr>";
+                echo "<tr>";
+                echo "<td>";
+                    echo "<img src='imagen/$nombreFoto' class='rounded-circle' width='400px' height='300px'>";
+                echo "<td>";
+                echo "</tr>";
+
+            }else{
         ?>
 
         <div class="container mt-1">
