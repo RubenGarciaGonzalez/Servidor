@@ -35,7 +35,7 @@ class Personas{
         $this->edad = $edad;
     }
 
-
+    
     public function getMail(){
         return $this->mail;
     }
