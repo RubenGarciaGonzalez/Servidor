@@ -53,8 +53,12 @@ class Alumnos
         }
     }
     //Update
-    public function update()
-    { }
+    public function edit()
+    {
+        $edit="update alumnos set nomAl=:n, apeAl=:a, mail=:m, Wx";
+
+
+    }
     //Create
     public function create()
     {
@@ -70,6 +74,25 @@ class Alumnos
             die("Error al crear el alumno!! ". $ex);
         }
     }
+
+
+    //------------------------------------------
+    public function getAlumno(){
+        $consulta='select * from alumnos where idAl=:id';
+        $stmt=$this->conectorBD->prepare($consulta);
+        try {
+            $stmt->execute([
+                ":id"=>$this->idAl
+            ]);
+        } catch (PDOException $ex) {
+            die("Error al recuperar el Alumno: ".$ex);
+        }
+
+        $alumno=$stmt->fetch(PDO::FETCH_OBJ);
+        return $alumno;
+    }
+    //------------------------------------------
+    
 
     public function getIdAl()
     {

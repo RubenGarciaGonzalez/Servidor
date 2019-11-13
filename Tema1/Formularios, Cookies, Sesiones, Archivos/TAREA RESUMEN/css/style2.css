@@ -66,3 +66,8 @@ button:hover {
     width: 100%;
   }
 }
+
+h1, label{
+  font-family:'Open Sans', serif;
+  text-shadow: 1px 1px black;
+}
