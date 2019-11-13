@@ -26,12 +26,12 @@ $todosLosAlumnnos = $alumnos->read();
     <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous'>
 </head>
 
-<body style="background-color:black">
+<body style='background-color:black'>
     <div class='container mt-5'>
-        <div class="container mt-3">
-            <a href="calumno.php" class="bnt btn-success mb-3">Nuevo Alumno</a>
+    <div class="container mt-3">
+            <a href="Calumno.php" class="bnt btn-success mb-3">Nuevo Alumno</a>
         </div>
-        <?php
+    <?php
             if (isset($_SESSION['mensaje'])) {
                 echo "<p class='mt-3 mb-3 text-center text-success'>";
                 echo $_SESSION['mensaje'];
@@ -61,9 +61,9 @@ $todosLosAlumnnos = $alumnos->read();
                     <td>{$alumnos->created_at}</td>
                     <td>
                     <form name='as' action='balumno.php' method='post' style='display:inline'>
-                        <input type='hidden' name='id' value='{$alumnos->idAl}'>
-                        <a href='ealumnos.php?id={$alumnos->idAl}' class='btn btn-info'>Editar</a>&nbsp
-                        <input type='submit' value='Borrar' class='btn btn-danger'>
+                    <input type='hidden' name='id' value='{$alumnos->idAl}'>
+                    <a href='ealumnos.php?id={$alumnos->idAl}' class='btn btn-info'>Editar</a>&nbsp;
+                    <input type='submit' value='Borrar' class='btn btn-danger'>
                     </form>
                     </td>
                 </tr>";

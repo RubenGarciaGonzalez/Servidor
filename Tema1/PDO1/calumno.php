@@ -13,7 +13,7 @@
 
     function error($texto){
         $_SESSION['error']=$texto;
-        header('Location:calumno.php');
+        header('Location:Calumno.php');
         die();
     }
 
@@ -49,7 +49,7 @@
     <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous'>
 </head>
 
-<body>
+<body style='background-color:salmon'>
     <div class='container mt-5'>
         <h3 class="text-center mt-4">Crud Alumnos</h3>
     <div class="container mt-3">
