@@ -7,9 +7,6 @@
     }
 ?>
 <!DOCTYPE html>
-<?php
-   
-?>
 <html lang="en">
     <head>
     <meta charset="UTF-8">
@@ -21,46 +18,49 @@
     </head>
     <body style="background-color:salmon">
     <?php
-        $mil = time();
-        $seconds = $mil / 1000;
-        $fecha = date("d/m/Y H:i:s", $seconds);
-        setcookie("ultima","",time()-1); 
-
-        setcookie("ultima",$fecha,time()+ 60*60*24*365);
+        $sesion=$_SESSION['usuarios'];
+        if(!isset($_COOKIE[$sesion])){
+            setcookie($sesion,date(DATE_RFC2822),time()+ 60*60*24*365);  
+            $flag =false;
+        }else{
+            $flag = true;
+        }
 
     ?>
         <div class="container mt-5">
             <?php
-                echo "
-                    <form name='menu'>
-                    <table cellspacing='5' cellpadding='5' align='center' >
-                        <tr class='text-center mb-5'>
-                            <td colspan=2><h2>Datos de sesión</h2></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p style='text-align:center'>Nombre de usuario</p>
-                            </td>
-                            <td>
-                                <input type='text' name='nombre' value='". ucfirst($_SESSION['usuarios'])."' class='form-control' readonly>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p style='text-align:center'>Última conexión</p>
-                            </td>
-                            <td>
-                            <input type='text' name='conexion' value='' class='form-control' readonly>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan='2' align='center'>
-                                <a href='index.php' class='btn btn-info'>Cerrar sesión</a>
-                            </td>
-                        </tr>
-                    </table>
-                    </form>
-                    ";
+                echo   "<form name='menu'>";
+                echo    "<table cellspacing='5' cellpadding='5' align='center' >";
+                echo        "<tr class='text-center mb-5'>";
+                echo            "<td colspan=2><h2>Datos de sesión</h2></td>";
+                echo         "</tr>";
+                echo       "<tr>";
+                echo        "<td>";
+                echo            "<p style='text-align:center'>Nombre de usuario</p>";
+                echo        "</td>";
+                echo        "<td>";
+                echo            "<input type='text' name='nombre' value='". ucfirst($sesion)."' class='form-control' readonly>";
+                echo         "</td>";
+                echo        "</tr>";
+                echo         "<tr>";
+                echo             "<td>";
+                echo                 "<p style='text-align:center'>Última conexión</p>";
+                echo             "</td>";
+                echo         "<td>";
+                            if($flag==false){
+                                echo "<input type='text' name='conexion' value='Primera visita!!' class='form-control' readonly>";
+                            }else{
+                                echo "<input type='text' name='conexion' value='".$_COOKIE[$sesion]."' class='form-control' readonly>";
+                            }
+                echo         "</td>";
+                echo        "</tr>";
+                echo        "<tr>";
+                echo            "<td colspan='2' align='center'>";
+                echo                "<a href='cerrar.php' class='btn btn-danger ml-1'>Cerrar sesión  </a>";
+                echo            "</td>";
+                echo        "</tr>";
+                echo    "</table>";
+                echo    "</form>";
             ?>
         </div>            
     </body>

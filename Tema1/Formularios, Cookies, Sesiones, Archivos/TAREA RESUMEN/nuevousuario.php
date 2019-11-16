@@ -81,10 +81,6 @@
         <br>
         <label for="contraseña"><b>Contraseña</b></label>
         <input type="password" placeholder="Introduzca su contraseña" name="contraseña" required>
-
-        <label>
-        <input type="checkbox" checked="checked" name="recuerda" style="margin-bottom:15px"> Recuerda el usuario
-        </label>
         <div class="clearfix">
         <a href="index.php" >Cancel</button>
         <button type="submit" name="btnRegistro">Registrate</button>
