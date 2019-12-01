@@ -35,7 +35,6 @@
 
             while (!feof($punt)) {
                 $texto=explode('-->', fgets($punt));
-                echo "<br>";
                 if (count($texto)>2) {
                     if ($texto[0]==$nombre || $texto[1]==$correo) {
                         $flag=true;
@@ -46,7 +45,7 @@
 
             if ($flag!=true) {
                 $punt=fopen($archivo, "a+");
-                fwrite($punt, $nombre."-->".$correo."-->".hash('sha256',$contraseña)."\n");
+                fwrite($punt, $nombre."-->".$correo."-->".$cifradoContraseña."\n");
                 fclose($punt);
                 
                 echo "
